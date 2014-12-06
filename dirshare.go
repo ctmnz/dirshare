@@ -20,6 +20,8 @@ func init() {
 func checkdirexists(path string) (bool, error) {
 	fi, err := os.Stat(path)
 	
+	if err != nil { return false, err }
+		
 	if(fi.IsDir()) {
 		if err == nil { return true, nil }
 		if os.IsNotExist(err) { return false, nil }
