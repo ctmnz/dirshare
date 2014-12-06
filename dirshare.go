@@ -36,13 +36,11 @@ func checkdirexists(path string) (bool, error) {
 
 func main() {
 	ConsoleArguments := os.Args[1:]
-	DirectoryShare := ConsoleArguments[0]
-	
-
 
 	if(len(ConsoleArguments)==0) {
 		fmt.Println("usage: dirshare <dirpath>")
 	} else {
+		DirectoryShare := ConsoleArguments[0]
 		// check if the directory exists
 		direxists, error := checkdirexists(DirectoryShare)
 		if(direxists) {
